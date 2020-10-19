@@ -9,11 +9,11 @@
 Número de grupo: 14  
 
 <ins>Integrantes:</ins>  
-Casaburi Julián (14471/6)  
-Velis Tadeo Martín (15020/5)  
-Ramirez Sergio Daniel (16372/2)  
+Casaburi, Julián (14471/6)  
+Velis, Tadeo Martín (15020/5)  
+Ramirez, Sergio Daniel (16372/2)  
 
-Ayudante asignado: Grigera Julián
+Ayudante asignado: Grigera, Julián
 
 ---
 
