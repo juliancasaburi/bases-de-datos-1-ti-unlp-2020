@@ -17,6 +17,10 @@ Ayudante asignado: Grigera, Julián
 
 ---
 
+<div style="page-break-after: always; visibility: hidden"> 
+    \pagebreak 
+</div>
+
 ## Ejercicio Fútbol 5 - Consigna
 
 <ins>Fútbol 5</ins>
@@ -32,7 +36,6 @@ Según el promedio de goles y los puntos obtenidos (3 por partido ganado, 1 por 
 El pago de la cancha se realiza después del partido, y la aplicación permite que cada jugador registrado realice el pago de su parte directamente desde la aplicación. Del pago se debe guardar la fecha, el monto, y el medio de pago, que puede ser con tarjeta de débito o crédito. Si quedó un saldo por pagar, se puede dejar el efectivo en el momento, cosa que también debe quedar registrado (y también se registra la fecha y monto, es un único pago para todos, no se separa en partes ni se conoce quién lo realizó).
 ```
 
-
 ---
 
 <div style="page-break-after: always; visibility: hidden"> 
@@ -42,5 +45,5 @@ El pago de la cancha se realiza después del partido, y la aplicación permite q
 # Modelo Conceptual (E/R)
 
 <p align="center">
-    <img src="grupo14-etapa1.svg" alt="TI E1 E/R"/>
+    <img src="4 - grupo14-ti-etapa1.svg" alt="TI E1 E/R"/>
 </p>
