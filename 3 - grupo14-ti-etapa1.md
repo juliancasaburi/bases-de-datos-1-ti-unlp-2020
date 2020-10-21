@@ -66,7 +66,7 @@ Esta se corresponde con la duración de un partido de fútbol 5.
     ```
 
 ### Puntos y promedios de goles
-- Decidimos agregar la cantidad de puntos (`puntos`) y el promedio de goles (`promedio_goles`) como atributos derivados de la entidad `JUGADOR`.
+- Decidimos agregar la cantidad de puntos (`puntos`) y el promedio de goles (`promedio_goles`) como atributos de la entidad `JUGADOR`.
 
     Según el enunciado:
 
@@ -74,7 +74,7 @@ Esta se corresponde con la duración de un partido de fútbol 5.
     Según el promedio de goles y los puntos obtenidos (3 por partido ganado, 1 por empatado, 0 por perdido), a cada jugador registrado se le asigna una categoría.
     ```
 
-   Si bien la categoría puede ser calculada a través de la relación `ASOCIA`, estos datos no tienen mucho recálculo, y es por esta razón que pueden ponerse como atributos derivados.
+   Si bien la categoría puede ser calculada a través de la relación `ASOCIA`, estos datos no tienen mucho recálculo, y es por esta razón que pueden ponerse como atributos almacenados de la entidad `JUGADOR`, en lugar de utilizar atributos derivados a través de `ASOCIA`.
 
 ### Método de pago
 - Decidimos modelar el pago con tarjeta de débito y crédito mediante el atributo `medio_de_pago` de la entidad `PAGO_TARJETA`. Al ver que no se necesita almacenar información adicional o realizar funcionalidades específicas a cada medio de pago, no encontramos la necesidad de agregar una nueva entidad y complejizar el modelo.
