@@ -71,7 +71,7 @@ Esta se corresponde con la duración de un partido de fútbol 5.
     Según el enunciado:
 
     ```
-    Según el promedio de goles y los puntos obtenidos (3 por partido ganado, 1 por empatado, 0 por perdido), a cada jugador registrado se le asigna una categoría.”
+    Según el promedio de goles y los puntos obtenidos (3 por partido ganado, 1 por empatado, 0 por perdido), a cada jugador registrado se le asigna una categoría.
     ```
 
    Si bien la categoría puede ser calculada a través de la relación `ASOCIA`, estos datos no tienen mucho recálculo, y es por esta razón que pueden ponerse como atributos derivados.
