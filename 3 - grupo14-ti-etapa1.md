@@ -44,6 +44,43 @@ El pago de la cancha se realiza después del partido, y la aplicación permite q
 
 # Modelo Conceptual (E/R)
 
+## Notas
+
+La aplicación utilizada para realizar el diagrama es [draw.io](https://app.diagrams.net/)
+
+---
+
+## Aclaraciones
+
+### Duración de una reserva/partido
+- Asumimos que todas las reservas tienen la misma duración estándar (en minutos), a partir de la hora de inicio (atributo `hora_inicio` de la entidad `DISPONIBILIDAD` en el modelo E/R).  
+Esta se corresponde con la duración de un partido de fútbol 5.
+
+### Categorías de Jugador
+- Decidimos modelar un historial completo de las categorías del jugador. También se podría haber considerado únicamente la última fecha en la que un jugador obtuvo cada categoría.  
+
+    El enunciado resulta un tanto ambiguo en el siguiente fragmento:
+
+    ```
+    Se debe registrar en qué fecha cambió de categoría, de las cuales puede subir o bajar en cualquier momento.
+    ```
+
+### Puntos y promedios de goles
+- Decidimos agregar la cantidad de puntos (`puntos`) y el promedio de goles (`promedio_goles`) como atributos derivados de la entidad `JUGADOR`.
+
+    Según el enunciado:
+
+    ```
+    Según el promedio de goles y los puntos obtenidos (3 por partido ganado, 1 por empatado, 0 por perdido), a cada jugador registrado se le asigna una categoría.”
+    ```
+
+   Si bien la categoría puede ser calculada a través de la relación `ASOCIA`, estos datos no tienen mucho recálculo, y es por esta razón que pueden ponerse como atributos derivados.
+
+### Método de pago
+- Decidimos modelar el pago con tarjeta de débito y crédito mediante el atributo `medio_de_pago` de la entidad `PAGO_TARJETA`. Al ver que no se necesita almacenar información adicional o realizar funcionalidades específicas a cada medio de pago, no encontramos la necesidad de agregar una nueva entidad y complejizar el modelo.
+
+## Diagrama
+
 <p align="center">
     <img src="4 - grupo14-ti-etapa1.svg" alt="TI E1 E/R"/>
 </p>
