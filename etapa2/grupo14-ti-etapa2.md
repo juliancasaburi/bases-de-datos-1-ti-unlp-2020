@@ -84,6 +84,8 @@ ASOCIA(**<ins>email, numero_reserva</ins>**, resultado, goles)
 
 RESERVO(**<ins>numero_reserva</ins>**, email)  
 
+CATEGORIA(**<ins>nombre_categoria</ins>**)  
+
 TIENE_CATEGORIA(**<ins>email, nombre_categoria</ins>**)  
 
 CATEGORIA_DESDE(**<ins>dia, mes, año, hora, email, nombre_categoria</ins>**)  
