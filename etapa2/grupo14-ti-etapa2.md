@@ -88,6 +88,8 @@ TIENE_CATEGORIA(**<ins>email, nombre_categoria</ins>**)
 
 CATEGORIA_DESDE(**<ins>dia, mes, año, hora, email, nombre_categoria</ins>**)  
 
+FECHA(**<ins>dia, mes, año, hora</ins>**)  
+
 --- 
 
 <div style="page-break-after: always; visibility: hidden"> 
