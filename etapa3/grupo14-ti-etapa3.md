@@ -172,43 +172,19 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 3. Listar el email de los usuarios que realizaron pagos sólo con tarjeta de débito.
 
     ```
-    EMAIL_USUARIOS_PAGARON_TARJETA_NO_DEBITO ←
+    EMAIL_JUGADORES_QUE_ALGUNA_VEZ_PAGARON_CREDITO ← 
     π email
     (
-        π email
-        (
-            σ tipo_usuario = 'JUGADOR' (USUARIO)
-        )
-        ⨝
-        (
-            π numero_pago, email (REALIZA_PAGO_TARJETA)
-            ⨝
-            π numero_pago (
-                σ medio_de_pago ≠ 'DEBITO' (PAGO_TARJETA)
-            )
-        )
+    	π numero_pago, email (REALIZA_PAGO_TARJETA)
+	⨝
+	π numero_pago (σ medio_de_pago = 'CREDITO' (PAGO_TARJETA))
     )
-
-    EMAIL_USUARIOS_PAGARON_TARJETA_DEBITO ←
-    π email
-    (
-        π email
-        (
-            σ tipo_usuario = 'JUGADOR' (USUARIO)
-        )
-        ⨝
-        (
-            π numero_pago, email (REALIZA_PAGO_TARJETA)
-            ⨝
-            π numero_pago (
-                σ medio_de_pago = 'DEBITO' (PAGO_TARJETA)
-            )
-        )
+    
+    π email (
+    	π email (REALIZA_PAGO_TARJETA)
+	-
+	EMAIL_JUGADORES_QUE_ALGUNA_VEZ_PAGARON_CREDITO
     )
-
-    EMAIL_USUARIOS_PAGARON_SOLO_TARJETA_DEBITO ← EMAIL_USUARIOS_PAGARON_TARJETA_DEBITO - EMAIL_USUARIOS_PAGARON_TARJETA_NO_DEBITO
-
-    EMAIL_USUARIOS_PAGARON_SOLO_TARJETA_DEBITO
     ```
 
     ---
