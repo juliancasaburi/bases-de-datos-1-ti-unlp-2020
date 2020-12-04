@@ -147,12 +147,8 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 
     JUGADORES_CANCHAS ← π email, numero_cancha
     (
-        (
-            π email (USUARIO)
-            ⨝
-            π email, numero_reserva (ASOCIA)
-        )
-        ⨝
+        π email, numero_reserva (ASOCIA)
+	⨝
         (
             π numero_reserva, numero_cancha
             (
