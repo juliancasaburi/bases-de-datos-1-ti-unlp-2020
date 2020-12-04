@@ -234,7 +234,6 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 
     ```
     π email (ASOCIA) - π email (REALIZA_PAGO_TARJETA)
-    
     ```
 
     ---
