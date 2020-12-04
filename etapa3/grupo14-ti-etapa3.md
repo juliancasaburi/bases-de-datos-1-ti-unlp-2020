@@ -299,8 +299,6 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     (
         σ año = 2020 AND mes = 11 AND dia >= 16 AND dia < 23 (CATEGORIA_DESDE)
     )
-
-
     ```
     
     ---
