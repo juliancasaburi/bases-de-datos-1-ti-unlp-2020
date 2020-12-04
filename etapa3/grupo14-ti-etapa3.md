@@ -371,7 +371,7 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
                     σ tipo_usuario = 'JUGADOR' (USUARIO)
                 )
                 ⨝
-                π email, numero_reserva
+                π email
                 (
                     σ goles > 0 (ASOCIA)
                 )
@@ -388,7 +388,7 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
                     σ tipo_usuario='JUGADOR' (USUARIO)
                 )
                 ⨝
-                π email, numero_reserva
+                π email
                 (
                     σ goles = 0 (ASOCIA)
                 )
