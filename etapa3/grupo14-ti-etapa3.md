@@ -288,7 +288,18 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     ```
     π nombre_categoria
     (
-        σ año = 2020 AND mes = 11 AND dia >= 16 AND dia < 23 (CATEGORIA_DESDE)
+        σ dia >= 16
+        (
+            σ dia < 23
+            (
+                σ mes = 11 
+                (
+                    (
+                        σ año = 2020 (CATEGORIA_DESDE)
+                    )
+                )
+            )
+        )
     )
     ```
     
