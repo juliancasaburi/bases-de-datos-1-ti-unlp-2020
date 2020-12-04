@@ -268,19 +268,30 @@ F
 TIENE_CATEGORIA = {
 email,nombre_categoria
 "tduerdin3@people.com",A
-"rniezen4@mlb.com",F
+"rniezen4@mlb.com",A
 "vphippinb@fotki.com",C
 "fdemerida8@ifeng.com",B
+"rniezen4@mlb.com",B
+"vphippinb@fotki.com",D
+"tduerdin3@people.com",B
+"tduerdin3@people.com",C
+"tduerdin3@people.com",D
 }
 
 CATEGORIA_DESDE = {
 dia,mes,anio,hora,email,nombre_categoria
 1,2,2020,"15:00","tduerdin3@people.com",A
-1,2,2020,"17:00","rniezen4@mlb.com",F
 1,6,2020,"10:00","fdemerida8@ifeng.com",B
 1,6,2020,"10:00","tduerdin3@people.com",B
 20,7,2020,"20:00","vphippinb@fotki.com",C
+1,11,2020,"17:00","rniezen4@mlb.com",A
+1,11,2020,"20:00","rniezen4@mlb.com",B
+20,11,2020,"20:00","vphippinb@fotki.com",D
+20,11,2020,"21:00","tduerdin3@people.com",C
+22,11,2020,"10:00","tduerdin3@people.com",D
+27,11,2020,"10:00","tduerdin3@people.com",E
 }
+
 FECHA = {
 dia,mes,anio,hora
 1,2,2020,"15:00"

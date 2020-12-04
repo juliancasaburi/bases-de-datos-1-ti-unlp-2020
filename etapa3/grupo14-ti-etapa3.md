@@ -334,7 +334,30 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     
 7. Listar el nombre de los jugadores que nunca cambiaron de categoría.
 
+    ```
+    JUGADORES_CATEGORIA_DESDE ← π nombre, email, año, mes, dia, hora
+    (
+        (
+            π nombre, email
+            (
+                σ tipo_usuario = 'JUGADOR' (USUARIO)
+            )
+            ⨝
+            π email, email, año, mes, dia, hora
+            (
+                CATEGORIA_DESDE
+            )
+        )
+    )
+		
+	AUX = ρ AUX (JUGADORES_CATEGORIA_DESDE)
+		
+    JUGADORES_CAMBIARON_CATEGORIA ← π USUARIO.nombre, USUARIO.email ((JUGADORES_CATEGORIA_DESDE) ⨝ USUARIO.email = AUX.email and (CATEGORIA_DESDE.año != AUX.año or CATEGORIA_DESDE.mes != AUX.mes or CATEGORIA_DESDE.dia != AUX.dia or CATEGORIA_DESDE.hora != AUX.hora) (AUX))
 
+    JUGADORES_NUNCA_CAMBIARON_CATEGORIA ← π USUARIO.nombre, USUARIO.email (JUGADORES_CATEGORIA_DESDE) - JUGADORES_CAMBIARON_CATEGORIA
+
+    JUGADORES_NUNCA_CAMBIARON_CATEGORIA
+    ```
     ---
 
     <div style="page-break-after: always; visibility: hidden"></div>
@@ -384,12 +407,12 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     
 9. Listar los nombres de las categorías que tuvieron movimientos en la última semana.
 
-    Tomando la fecha **23/11/2020**
+    Tomando la fecha **23/11/2020**:
 
     ```
     π nombre_categoria
     (
-        σ anio = 2020 AND mes = 11 AND dia >= 16 AND dia < 23 (CATEGORIA_DESDE)
+        σ año = 2020 AND mes = 11 AND dia >= 16 AND dia < 23 (CATEGORIA_DESDE)
     )
 
 
@@ -425,3 +448,30 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     <div style="page-break-after: always; visibility: hidden"></div>
     
 11. Listar nombre y email de los jugadores que cambiaron al menos 2 veces de categoría en el último mes.
+
+    Tomando el mes de **Noviembre (11)** como el *último mes*:
+
+    ```
+    JUGADORES_CATEGORIA_DESDE_MES_año ← π nombre, email, dia, mes, año, hora
+    (
+        (
+            π nombre, email
+            (
+                σ tipo_usuario = 'JUGADOR' (USUARIO)
+            )
+            ⨝
+            π email, dia, mes, año, hora
+            (
+                σ mes = 11 AND año = 2020 (CATEGORIA_DESDE)
+            )
+        )
+    )
+		
+	AUX ← ρ AUX (JUGADORES_CATEGORIA_DESDE_MES_año)
+		
+    JUGADORES_CAMBIARON_2_VECES_ULTIMO_MES ← (JUGADORES_CATEGORIA_DESDE_MES_año) ⨝ USUARIO.email = AUX.email and (CATEGORIA_DESDE.dia != AUX.dia or CATEGORIA_DESDE.hora != AUX.hora) (AUX)
+
+    π USUARIO.nombre, USUARIO.email (JUGADORES_CAMBIARON_2_VECES_ULTIMO_MES)
+    ```
+    
+    ---
