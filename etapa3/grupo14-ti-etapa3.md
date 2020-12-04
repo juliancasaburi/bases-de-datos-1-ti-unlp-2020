@@ -448,7 +448,7 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     Tomando el mes de **Noviembre (11)** como el *último mes*:
 
     ```
-    JUGADORES_CATEGORIA_DESDE_MES_año ← π nombre, email, dia, mes, año, hora
+    JUGADORES_CATEGORIA_DESDE_MES_AÑO ← π nombre, email, dia, mes, año, hora
     (
         (
             π nombre, email
@@ -463,9 +463,9 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
         )
     )
 		
-	AUX ← ρ AUX (JUGADORES_CATEGORIA_DESDE_MES_año)
+	AUX ← ρ AUX (JUGADORES_CATEGORIA_DESDE_MES_AÑO)
 		
-    JUGADORES_CAMBIARON_2_VECES_ULTIMO_MES ← (JUGADORES_CATEGORIA_DESDE_MES_año) ⨝ USUARIO.email = AUX.email and (CATEGORIA_DESDE.dia != AUX.dia or CATEGORIA_DESDE.hora != AUX.hora) (AUX)
+    JUGADORES_CAMBIARON_2_VECES_ULTIMO_MES ← (JUGADORES_CATEGORIA_DESDE_MES_AÑO) ⨝ USUARIO.email = AUX.email and (CATEGORIA_DESDE.dia != AUX.dia or CATEGORIA_DESDE.hora != AUX.hora) (AUX)
 
     π USUARIO.nombre, USUARIO.email (JUGADORES_CAMBIARON_2_VECES_ULTIMO_MES)
     ```
