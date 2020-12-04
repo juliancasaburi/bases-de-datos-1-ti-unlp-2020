@@ -159,7 +159,7 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 
     EMAIL_JUGADORES_TODAS_LAS_CANCHAS_SEDE_A_UTILIZAR ← JUGADORES_CANCHAS % π numero_cancha
     (
-        POSEE |X| POSEE.nombre_sede = SEDE_A_UTILIZAR.nombre_sede
+        (POSEE) |X| POSEE.nombre_sede = SEDE_A_UTILIZAR.nombre_sede (SEDE_A_UTILIZAR)
     )
 
     EMAIL_JUGADORES_TODAS_LAS_CANCHAS_SEDE_A_UTILIZAR
