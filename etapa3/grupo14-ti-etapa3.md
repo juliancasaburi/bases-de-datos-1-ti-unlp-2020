@@ -218,56 +218,12 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 4. Listar el email de los usuarios que pagaron su parte en todos los partidos que jugaron.
 
     ```
-    JUGADORES_PARTIDOS ←
-    π email
-    (
-        (
-            π email
-            (
-                σ tipo_usuario = 'JUGADOR' (USUARIO)
-            )
-            ⨝
-            π email, numero_reserva (ASOCIA)
-        )
+    JUGADORES_QUE_NO_PAGARON_SIEMPRE ←
+    π email (
+    	π email, numero_reserva (ASOCIA) - π email, numero_reserva (REALIZA_PAGO_TARJETA)
     )
-
-    JUGADORES_NO_PAGARON_ALGUNA_RESERVA ←
-    π email
-    (
-        π email, numero_reserva
-        (
-            (
-                π email
-                (
-                    σ tipo_usuario = 'JUGADOR' (USUARIO)
-                )
-                ⨝
-                π email, numero_reserva (ASOCIA)
-            )
-        )
-
-        -
-
-        π email, numero_reserva
-        (
-            (
-                π email
-                (
-                    σ tipo_usuario = 'JUGADOR' (USUARIO)
-                )
-                ⨝
-                π email, numero_reserva (ASOCIA)
-            )
-            ⨝
-            (
-                (REALIZA_PAGO_TARJETA)
-                ⨝
-                π numero_pago (PAGO_TARJETA)
-            )
-        )
-    )
-
-    JUGADORES_PARTIDOS - JUGADORES_NO_PAGARON_ALGUNA_RESERVA
+    
+    π email (ASOCIA) - JUGADORES_QUE_NO_PAGARON_SIEMPRE
     ```
     
     ---
