@@ -233,27 +233,8 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 6. Listar el email de los usuarios con cuenta registrada que nunca pagaron su parte por medio de la app (pero que sí jugaron/fueron agregados a algún partido).
 
     ```
-    EMAIL_USUARIOS_ASOCIADOS_RESERVA ←
-
-    (
-        π email
-        (
-            σ tipo_usuario = 'JUGADOR' (USUARIO)
-        )
-        ⨝
-        π email (ASOCIA)
-    )
-
-    EMAIL_USUARIOS_PAGARON_PARTE ← 
-
-    (
-        EMAIL_USUARIOS_ASOCIADOS_RESERVA
-        ⨝
-        π email (REALIZA_PAGO_TARJETA)
-    )
-
-    EMAIL_USUARIOS_ASOCIADOS_RESERVA - EMAIL_USUARIOS_PAGARON_PARTE
-
+    π email (ASOCIA) - π email (REALIZA_PAGO_TARJETA)
+    
     ```
 
     ---
