@@ -283,7 +283,7 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     π nombre (
         (π email (ASOCIA) - EMAIL_JUGADORES_QUE_ALGUNA_VEZ_NO_HICIERON_GOL)
         ⨝
-        π email, nombre (USUARIO)
+        π email, nombre (σ tipo_usuario = 'JUGADOR' (USUARIO))
     )
     ```
 
