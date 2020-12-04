@@ -209,21 +209,11 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 5. Listar el email de los usuarios que reservaron y además pagaron su parte al menos una vez.
 
     ```
-    π email
-    (
-        (
-            (
-                π email
-                (
-                    σ tipo_usuario ='JUGADOR' (USUARIO)
-                )
-                ⨝
-                π email (RESERVO)
-            )
-        )
-        ⨝
-        REALIZA_PAGO_TARJETA
-    )
+    π email (RESERVO)
+
+    ∩
+
+    π email (REALIZA_PAGO_TARJETA)
     ```
 
     ---
@@ -280,7 +270,8 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
         σ goles = 0 (π email, goles (ASOCIA))
     )
     
-    π nombre (
+    π nombre 
+    (
         (π email (ASOCIA) - EMAIL_JUGADORES_QUE_ALGUNA_VEZ_NO_HICIERON_GOL)
         ⨝
         π email, nombre (σ tipo_usuario = 'JUGADOR' (USUARIO))
