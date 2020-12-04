@@ -175,15 +175,15 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
     EMAIL_JUGADORES_QUE_ALGUNA_VEZ_PAGARON_CREDITO ← 
     π email
     (
-    	π numero_pago, email (REALIZA_PAGO_TARJETA)
-	⨝
-	π numero_pago (σ medio_de_pago = 'CREDITO' (PAGO_TARJETA))
+        π numero_pago, email (REALIZA_PAGO_TARJETA)
+        ⨝
+        π numero_pago (σ medio_de_pago = 'CREDITO' (PAGO_TARJETA))
     )
     
     π email (
-    	π email (REALIZA_PAGO_TARJETA)
-	-
-	EMAIL_JUGADORES_QUE_ALGUNA_VEZ_PAGARON_CREDITO
+        π email (REALIZA_PAGO_TARJETA)
+        -
+        EMAIL_JUGADORES_QUE_ALGUNA_VEZ_PAGARON_CREDITO
     )
     ```
 
