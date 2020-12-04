@@ -311,22 +311,17 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 10. Listar nombre y email de los jugadores que no ganaron ningún partido.
 
     ```
-    JUGADORES_GANARON_PARTIDO ← π nombre, email
+    EMAIL_JUGADORES_QUE_ALGUNA_VEZ_GANARON ←
+    π email
     (
-        (
-            π nombre, email
-            (
-                σ tipo_usuario = 'JUGADOR' (USUARIO)
-            )
-            ⨝
-            π email
-            (
-                σ resultado = 'VICTORIA' (ASOCIA)
-            )
-        )
+        σ resultado = 'VICTORIA' (π email, resultado (ASOCIA))
     )
-
-    π nombre, email ((σ tipo_usuario = 'JUGADOR' (USUARIO)) - JUGADORES_GANARON_PARTIDO)
+    
+    π nombre, email (
+        (π email (ASOCIA) - EMAIL_JUGADORES_QUE_ALGUNA_VEZ_GANARON)
+        ⨝
+        π email, nombre (σ tipo_usuario = 'JUGADOR' (USUARIO))
+    )
     ```
     
     ---
