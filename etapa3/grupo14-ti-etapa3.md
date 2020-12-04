@@ -274,39 +274,16 @@ FECHA(**<ins>dia, mes, año, hora</ins>**)
 8. Listar el nombre de los jugadores que hicieron goles en todos los partidos que jugaron.
 
     ```
-    π nombre
+    EMAIL_JUGADORES_QUE_ALGUNA_VEZ_NO_HICIERON_GOL ←
+    π email
     (
-        π email, nombre
-        (
-            (
-                π email, nombre
-                (
-                    σ tipo_usuario = 'JUGADOR' (USUARIO)
-                )
-                ⨝
-                π email
-                (
-                    σ goles > 0 (ASOCIA)
-                )
-            )
-        )
-        
-        -
-        
-        π email, nombre
-        (
-            (
-                π email, nombre
-                (
-                    σ tipo_usuario='JUGADOR' (USUARIO)
-                )
-                ⨝
-                π email
-                (
-                    σ goles = 0 (ASOCIA)
-                )
-            )
-        )
+        σ goles = 0 (π email, goles (ASOCIA))
+    )
+    
+    π nombre (
+        (π email (ASOCIA) - EMAIL_JUGADORES_QUE_ALGUNA_VEZ_NO_HICIERON_GOL)
+        ⨝
+        π email, nombre (USUARIO)
     )
     ```
 
