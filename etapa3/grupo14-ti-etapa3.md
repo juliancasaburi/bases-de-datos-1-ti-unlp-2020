@@ -45,12 +45,12 @@ DE_CANCHA_DISPONIBILIDAD(**<ins>numero_reserva</ins>**, numero_cancha, fecha, ho
 
 RESERVA(**<ins>numero_reserva</ins>**)  
 
-# Jerarquia especialización estrategia 1 "Una relación para el conjunto de entidades de nivel más alto"
+# Jerarquía especialización estrategia 1 "Una relación para el conjunto de entidades de nivel más alto"
 USUARIO(**<ins>email</ins>**, nombre, contraseña, tipo_usuario, puntos, promedio_goles)  
 
 ---
 
-# Jerarquia generalización estrategia 2 "Una relación para cada conjunto de entidades del nivel más bajo"
+# Jerarquía generalización estrategia 2 "Una relación para cada conjunto de entidades del nivel más bajo"
 
 PAGO_TARJETA(**<ins>numero_pago</ins>**, fecha, monto, medio_de_pago)  
 
